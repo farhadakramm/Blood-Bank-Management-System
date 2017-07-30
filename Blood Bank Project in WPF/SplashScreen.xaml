@@ -1,0 +1,15 @@
+﻿<Window x:Class="Blood_Bank_Project_in_WPF.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Blood_Bank_Project_in_WPF"
+        mc:Ignorable="d"
+        Title="SplashScreen" BorderBrush="Transparent" Height="350" Width="700" Icon="Media/System_Icon.ico" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" >
+    <Window.Background>
+        <ImageBrush ImageSource="Media/Brand Logo.png"/>
+    </Window.Background>
+    <Grid MouseLeftButtonDown="window_move">
+        
+    </Grid>
+</Window>

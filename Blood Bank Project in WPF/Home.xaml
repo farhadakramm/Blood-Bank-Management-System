@@ -1,0 +1,63 @@
+﻿<Page x:Class="Blood_Bank_Project_in_WPF.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Blood_Bank_Project_in_WPF"
+            xmlns:DVToolkit="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+      xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Blood Bank Introduction" Grid.Row="0" FontFamily="Segoe UI" FontSize="25px" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top"/>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Stock Statistics" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI" FontSize="30px" Grid.Row="0"/>
+
+            <DVC:Chart Canvas.Top="10" Canvas.Left="10" Name="mcChart" Grid.Row="1"
+           Width="500" LegendTitle="Blood Statistics"
+           Background="Transparent" BorderBrush="White">
+                <DVC:Chart.Series>
+                    <DVC:PieSeries Background="White" BorderBrush="White"
+            IndependentValueBinding="{Binding Path=Stock_ID_BType}"
+            DependentValueBinding="{Binding Path=Blood_Quantity}">
+                        <DVC:PieSeries.Effect>
+                            <DropShadowEffect ShadowDepth="5" BlurRadius="5" Color="CornflowerBlue"/>
+                        </DVC:PieSeries.Effect>
+                    </DVC:PieSeries>
+                </DVC:Chart.Series>
+            </DVC:Chart>
+        </Grid>
+        
+        <RichTextBox Focusable="False" Foreground="Black" FontFamily="Segoe UI" FontSize="20px" Margin="0,20,0,0" Grid.Row="1" BorderThickness="0" Cursor="Arrow"   IsReadOnly="True" IsUndoEnabled="False" RenderTransformOrigin="0.5,0.5" >
+            <RichTextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </RichTextBox.RenderTransform>
+            <FlowDocument>
+                <Section  HasTrailingParagraphBreakOnPaste="False">
+                    <Paragraph  FontFamily="Segoe UI" FontSize="18px" TextAlignment="Left">
+                        Human Blood is an essential element of a human life. Blood transfusion has been reponsible for
+                        saving millions of lives each year around the world.
+                        Yet the quantity and quality of of blood pool available for transfusion is still a major concern
+                        across the globe.
+                    </Paragraph>
+                </Section>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Page>

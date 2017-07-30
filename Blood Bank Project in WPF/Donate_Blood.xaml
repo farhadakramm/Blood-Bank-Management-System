@@ -1,0 +1,116 @@
+﻿<Page xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"  x:Class="Blood_Bank_Project_in_WPF.Donate_Blood"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Blood_Bank_Project_in_WPF"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1000">
+
+    <!--Main Grid Starts-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Donate Blood" Grid.Row="0" FontFamily="Segoe UI" FontSize="25px" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top"/>
+        <!--Ineer Grid Starts-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <!--Add Blood Group Box Starts-->
+            <GroupBox x:Name="gb_addBlood" Grid.Row="0" Header="Add Blood to Blood Bank" FontFamily="Segoe UI" FontSize="15px" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Donor Name: " Grid.Column="0" Grid.Row="0" FontFamily="Segoe UI" FontSize="13px" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txt_donorName" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Stretch" Margin="10,0,10,0" FontFamily="Segoe UI" VerticalAlignment="Center" FontSize="15px" Height="20px" />
+                    <TextBlock Text="Click the Donor to Add his / her Blood to Blood Bank" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Segoe UI" FontSize="12px" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Margin="0,0,90,0"/>
+                    <Button x:Name="btn_addBlood_donorSearch" Grid.Column="1" Grid.Row="1" Style="{DynamicResource Flat_Button}" Content="Search" FontSize="15px" Height="25px" VerticalAlignment="Center" HorizontalAlignment="Right" Width="70px" Margin="0,0,10,0" Click="btn_addBlood_donorSearch_Click" />
+                    <DataGrid x:Name="dGrid_addBlood_donorSearch" AutoGenerateColumns="False" Grid.Column="0" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="5" Margin="10,0,10,0" FontFamily="Segoe UI" FontSize="13px" SelectionChanged="dGrid_addBlood_donorSearch_SelectionChanged">
+                        
+                    </DataGrid>
+                    <TextBlock Text="Donor Information" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="15px" TextWrapping="Wrap"/>
+                    <TextBlock Text="Name: " Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px" />
+                    <TextBox x:Name="txt_donorinfoName" Grid.Column="3" HorizontalContentAlignment="Stretch" Margin="10,0,10,0" Height="20px" FontFamily="Segoe UI" FontSize="12px" Grid.Row="1" />
+                    <TextBlock Text="E-Mail: " Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px" />
+                    <TextBox x:Name="txt_donorinfoEmail" Grid.Column="3" HorizontalContentAlignment="Stretch" Margin="10,0,10,0" Height="20px" FontFamily="Segoe UI" FontSize="12px" Grid.Row="2" />
+                    <TextBlock Text="Disease (if): " Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px" />
+                    <TextBox x:Name="txt_donorinfoDisease" Grid.Column="3" HorizontalContentAlignment="Stretch" Margin="10,0,10,0" Height="20px" FontFamily="Segoe UI" FontSize="12px" Grid.Row="3" />
+                    <TextBlock Text="Amount: " Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px" />
+                    <xctk:IntegerUpDown x:Name="up_donorBloodQuantity" Value="1" Minimum="0" Maximum="100" Grid.Column="4" Grid.Row="4" Height="20px" Margin="10,0,60,0" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="12px"  />
+                    <TextBlock Text="Bottles" Grid.Column="4" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" />
+                    <TextBlock Text="Donation Date: " Grid.Column="2" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px" />
+                    <xctk:DateTimePicker Format="LongDate" Grid.Column="4" Grid.Row="5" Margin="10,0,10,0" Height="20px" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="12px"  />
+                    <Button x:Name="btn_doantionClear" Content="Clear" FontFamily="Segoe UI" FontSize="15px" Style="{DynamicResource Flat_Button}" Grid.Column="4" Grid.Row="6" Height="23px" HorizontalAlignment="Left" Margin="10,0,0,0" />
+                    <Button x:Name="btn_addBlood" Content="Donate" FontFamily="Segoe UI" FontSize="15px" Style="{DynamicResource Flat_Button}" Grid.Column="4" Grid.Row="6" Height="23px" HorizontalAlignment="Right" Margin="0,0,10,0" Click="btn_addBlood_Click" />
+                </Grid>
+            </GroupBox>
+            <!--Add Blood Group Box-->
+
+            <GroupBox x:Name="gb_donateBlood" Grid.Row="1" Header="Donate Blood" FontFamily="Segoe UI" FontSize="15px"><!--Donate Blood Group Box Starts-->
+                <Grid> <!--Ineer Grid Started-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Blood Group" Grid.Column="0" Grid.Row="0" FontFamily="Segoe UI" FontSize="12px" VerticalAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap"/>
+                    <ComboBox x:Name="combo_bloodGroup" ItemsSource="{Binding Blood_Group_ID}" ToolTip="Select any Blood Group to Search" SelectedValuePath="Blood_Group_ID" DisplayMemberPath="Blood_Group_Title" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Stretch" Margin="10,0,10,0" Height="25px"/>
+                    <TextBlock Text="Click The Donor to Donate his / her Blood" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Segoe UI" FontSize="12px" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Margin="0,0,100,0"/>
+                    <Button x:Name="btn_SearchByGroup" Grid.Column="1" Grid.Row="1" Style="{DynamicResource Flat_Button}" Content="Search" FontSize="15px" Height="25px" VerticalAlignment="Center" HorizontalAlignment="Right" Width="70px" Margin="0,0,10,0" Click="btn_SearchByGroup_Click" />
+                    <DataGrid x:Name="dg_donatetodonor" AutoGenerateColumns="False" Background="Transparent" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="7" FontFamily="Segoe UI" FontSize="13px" Margin="10,0,10,0" SelectionChanged="DataGrid_SelectionChanged" >
+
+                    </DataGrid>
+                    
+                    <TextBlock Text="Receiver Information" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="15px"/>
+                    <TextBlock Text="Name:" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px"/>
+                    <TextBox x:Name="txt_accepterName" Grid.Column="3" Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="20px" Margin="10,0,10,0" FontFamily="Segoe UI" FontSize="12px" />
+                    <TextBlock Text="Father's Name:" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px"/>
+                    <TextBox x:Name="txt_accepterFatherName" Grid.Column="3" Grid.Row="2" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="20px" Margin="10,0,10,0" FontFamily="Segoe UI" FontSize="12px" />
+                    <TextBlock Text="Contact #" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px"/>
+                    <xctk:MaskedTextBox x:Name="txt_accepterContact" Grid.Column="4" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" Grid.Row="3" Height="20px" FontFamily="Segoe UI" FontSize="12px" Margin="10,0,10,0" Mask="0000-0000000"/>
+                    <TextBlock Text="CNIC #" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px"/>
+                    <xctk:MaskedTextBox x:Name="txt_accepterCNIC" Grid.Column="4" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" Grid.Row="4" Height="20px" FontFamily="Segoe UI" FontSize="12px" Margin="10,0,10,0" Mask="00000-0000000-0"/>
+                    <TextBlock Text="Amount" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px"/>
+                    <xctk:IntegerUpDown x:Name="ud_donationBloodAmount" Value="1" Grid.Column="4" Grid.Row="5" FontFamily="Segoe UI" Minimum="0" Maximum="100" FontSize="12px" Margin="10,0,60,0" Height="20px" />
+                    <TextBlock Text="Bottles" Grid.Column="4" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="12px" Margin="0,0,10,0"/>
+                    <TextBlock Text="Disease (if):" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px"/>
+                    <TextBox x:Name="txt_accepterDisease" Grid.Column="3" Grid.Row="6" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="20px" Margin="10,0,10,0" FontFamily="Segoe UI" FontSize="12px" />
+                    <TextBlock Text="Donation Date:" Grid.Column="2" Grid.Row="7" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Segoe UI" FontSize="12px"/>
+                    <xctk:DateTimePicker x:Name="dp_acceptanceDate" Format="LongDate" Grid.Column="4" Grid.Row="7" Margin="10,0,10,0" FontFamily="Segoe UI" FontSize="12px" VerticalAlignment="Center" Height="20px"/>
+                    <Button x:Name="btn_doanteClear" Content="Clear" FontFamily="Segoe UI" FontSize="15px" Style="{DynamicResource Flat_Button}" Grid.Column="4" Grid.Row="8" Height="23px" HorizontalAlignment="Left" Margin="10,0,0,0" Click="btn_doanteClear_Click" />
+                    <Button x:Name="btn_doanteBlood" Content="Donate" FontFamily="Segoe UI" FontSize="15px" Style="{DynamicResource Flat_Button}" Grid.Column="4" Grid.Row="8" Height="23px" HorizontalAlignment="Right" Margin="0,0,10,0" Click="btn_doanteBlood_Click" />
+                </Grid> <!--Ineer Grid Ends-->
+            </GroupBox>
+        </Grid><!--Ineer Grid Ends-->
+    </Grid><!--Main Grid Ends-->
+</Page>

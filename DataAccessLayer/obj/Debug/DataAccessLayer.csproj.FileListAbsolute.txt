@@ -1,0 +1,10 @@
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\BHATTI\documents\visual studio 2015\Projects\Blood Bank Project in WPF\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

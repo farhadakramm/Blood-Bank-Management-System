@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BloodBankDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Blood_Group">
+    <Key>
+      <PropertyRef Name="Blood_Group_ID" />
+    </Key>
+    <Property Name="Blood_Group_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Donors" Relationship="Self.FK_Donor_Blood_Group" FromRole="Blood_Group" ToRole="Donor" />
+    <Property Name="Blood_Group_Title" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Blood_Stock">
+    <Key>
+      <PropertyRef Name="Stock_ID_BType" />
+    </Key>
+    <Property Name="Stock_ID_BType" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Blood_Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Donors" Relationship="Self.FK_Donor_Blood_Stock" FromRole="Blood_Stock" ToRole="Donor" />
+  </EntityType>
+  <EntityType Name="Donated_Blood">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Donor_ID" Type="Int32" Nullable="false" />
+    <Property Name="Receiver_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Receiver" Relationship="Self.FK_Donated_Blood_Accepter" FromRole="Donated_Blood" ToRole="Receiver" />
+    <NavigationProperty Name="Donor" Relationship="Self.FK_Donated_Blood_Donor" FromRole="Donated_Blood" ToRole="Donor" />
+  </EntityType>
+  <EntityType Name="Donor">
+    <Key>
+      <PropertyRef Name="DonorID" />
+    </Key>
+    <Property Name="DonorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Donor_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Donor_Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Donor_Age" Type="Int32" Nullable="false" />
+    <Property Name="Donor_Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Donor_DOB" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Donor_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Donor_CNIC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Donor_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Donor_City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Donor_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Donor_Height" Type="Double" Nullable="false" />
+    <Property Name="donatedBefore" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="donatedBefore_Date" Type="DateTime" Precision="3" />
+    <Property Name="Donor_Disease" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Eye_Color_ID" Type="Int32" Nullable="false" />
+    <Property Name="Blood_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="Stock_ID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isSelfDonated" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Blood_Group" Relationship="Self.FK_Donor_Blood_Group" FromRole="Donor" ToRole="Blood_Group" />
+    <NavigationProperty Name="Blood_Stock" Relationship="Self.FK_Donor_Blood_Stock" FromRole="Donor" ToRole="Blood_Stock" />
+    <NavigationProperty Name="Donated_Blood" Relationship="Self.FK_Donated_Blood_Donor" FromRole="Donor" ToRole="Donated_Blood" />
+    <NavigationProperty Name="Receivers" Relationship="Self.FK_Accepter_Donor" FromRole="Donor" ToRole="Receiver" />
+    <NavigationProperty Name="Eye_Color" Relationship="Self.FK_Donor_Eye_Color" FromRole="Donor" ToRole="Eye_Color" />
+  </EntityType>
+  <EntityType Name="Eye_Color">
+    <Key>
+      <PropertyRef Name="Eye_Color_ID" />
+    </Key>
+    <Property Name="Eye_Color_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Eye_Color1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Donors" Relationship="Self.FK_Donor_Eye_Color" FromRole="Eye_Color" ToRole="Donor" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Receiver">
+    <Key>
+      <PropertyRef Name="Receiver_ID" />
+    </Key>
+    <Property Name="Receiver_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Receiver_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Receiver_Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Receiver_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Receiver_CNIC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Blood_Amount" Type="Int32" Nullable="false" />
+    <Property Name="Donation_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Disease" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Donor_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Donated_Blood" Relationship="Self.FK_Donated_Blood_Accepter" FromRole="Receiver" ToRole="Donated_Blood" />
+    <NavigationProperty Name="Donor" Relationship="Self.FK_Accepter_Donor" FromRole="Receiver" ToRole="Donor" />
+  </EntityType>
+  <Association Name="FK_Donor_Blood_Group">
+    <End Role="Blood_Group" Type="Self.Blood_Group" Multiplicity="1" />
+    <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blood_Group">
+        <PropertyRef Name="Blood_Group_ID" />
+      </Principal>
+      <Dependent Role="Donor">
+        <PropertyRef Name="Blood_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donor_Blood_Stock">
+    <End Role="Blood_Stock" Type="Self.Blood_Stock" Multiplicity="1" />
+    <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blood_Stock">
+        <PropertyRef Name="Stock_ID_BType" />
+      </Principal>
+      <Dependent Role="Donor">
+        <PropertyRef Name="Stock_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donated_Blood_Accepter">
+    <End Role="Receiver" Type="Self.Receiver" Multiplicity="1" />
+    <End Role="Donated_Blood" Type="Self.Donated_Blood" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receiver">
+        <PropertyRef Name="Receiver_ID" />
+      </Principal>
+      <Dependent Role="Donated_Blood">
+        <PropertyRef Name="Receiver_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donated_Blood_Donor">
+    <End Role="Donor" Type="Self.Donor" Multiplicity="1" />
+    <End Role="Donated_Blood" Type="Self.Donated_Blood" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donor">
+        <PropertyRef Name="DonorID" />
+      </Principal>
+      <Dependent Role="Donated_Blood">
+        <PropertyRef Name="Donor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Accepter_Donor">
+    <End Role="Donor" Type="Self.Donor" Multiplicity="1" />
+    <End Role="Receiver" Type="Self.Receiver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donor">
+        <PropertyRef Name="DonorID" />
+      </Principal>
+      <Dependent Role="Receiver">
+        <PropertyRef Name="Donor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donor_Eye_Color">
+    <End Role="Eye_Color" Type="Self.Eye_Color" Multiplicity="1" />
+    <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Eye_Color">
+        <PropertyRef Name="Eye_Color_ID" />
+      </Principal>
+      <Dependent Role="Donor">
+        <PropertyRef Name="Eye_Color_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BloodBankDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Blood_Group" EntityType="Self.Blood_Group" />
+    <EntitySet Name="Blood_Stock" EntityType="Self.Blood_Stock" />
+    <EntitySet Name="Donated_Blood" EntityType="Self.Donated_Blood" />
+    <EntitySet Name="Donors" EntityType="Self.Donor" />
+    <EntitySet Name="Eye_Color" EntityType="Self.Eye_Color" />
+    <EntitySet Name="Members" EntityType="Self.Member" />
+    <EntitySet Name="Receivers" EntityType="Self.Receiver" />
+    <AssociationSet Name="FK_Donor_Blood_Group" Association="Self.FK_Donor_Blood_Group">
+      <End Role="Blood_Group" EntitySet="Blood_Group" />
+      <End Role="Donor" EntitySet="Donors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donor_Blood_Stock" Association="Self.FK_Donor_Blood_Stock">
+      <End Role="Blood_Stock" EntitySet="Blood_Stock" />
+      <End Role="Donor" EntitySet="Donors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donated_Blood_Accepter" Association="Self.FK_Donated_Blood_Accepter">
+      <End Role="Receiver" EntitySet="Receivers" />
+      <End Role="Donated_Blood" EntitySet="Donated_Blood" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donated_Blood_Donor" Association="Self.FK_Donated_Blood_Donor">
+      <End Role="Donor" EntitySet="Donors" />
+      <End Role="Donated_Blood" EntitySet="Donated_Blood" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Accepter_Donor" Association="Self.FK_Accepter_Donor">
+      <End Role="Donor" EntitySet="Donors" />
+      <End Role="Receiver" EntitySet="Receivers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donor_Eye_Color" Association="Self.FK_Donor_Eye_Color">
+      <End Role="Eye_Color" EntitySet="Eye_Color" />
+      <End Role="Donor" EntitySet="Donors" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

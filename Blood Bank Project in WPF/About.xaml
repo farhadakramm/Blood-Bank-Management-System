@@ -1,0 +1,41 @@
+﻿<Window x:Class="Blood_Bank_Project_in_WPF.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Blood_Bank_Project_in_WPF"
+        mc:Ignorable="d"
+        Title="About" Height="300" Width="500" WindowStartupLocation="CenterOwner"  ResizeMode="NoResize" WindowStyle="SingleBorderWindow" ShowInTaskbar="False" Icon="Media/System_Icon.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width='1*'/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="CornflowerBlue">
+            <TextBlock Text="About" FontFamily="Segoe UI" FontSize="25px" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White" Margin="0,15,0,0" />
+        </Grid>
+        <Frame Background="CornflowerBlue" Grid.Column="1"/>
+        <RichTextBox FontFamily="Segoe UI" FontSize="18" Grid.Column="1" Margin="0,15,0,0" BorderThickness="0" Cursor="Arrow"   IsReadOnly="True" IsUndoEnabled="False" Focusable="False" >
+            <FlowDocument>
+                <Paragraph FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold">
+                    Version: 1.0
+                </Paragraph>
+                <Paragraph FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold">
+                    Developer:  Farhad Akram
+                </Paragraph>
+                <Paragraph FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold">
+                    Company:    CodeGenius Incorporated
+                </Paragraph>
+                <Paragraph FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold">
+                    E-Mail:     farhadakram@outlook.com
+                </Paragraph>
+                <Paragraph FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold">
+                    Contact #    0336-7676758
+                </Paragraph>
+                <Paragraph FontFamily="Segoe UI" FontSize="14" FontWeight="SemiBold">
+                    CodeGenius Interactives All Rights Reserved
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Window>

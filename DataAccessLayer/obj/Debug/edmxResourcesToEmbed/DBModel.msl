@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BloodBankDatabaseModelStoreContainer" CdmEntityContainer="BloodBankDatabaseEntities">
+    <EntitySetMapping Name="Blood_Group">
+      <EntityTypeMapping TypeName="BloodBankDatabaseModel.Blood_Group">
+        <MappingFragment StoreEntitySet="Blood_Group">
+          <ScalarProperty Name="Blood_Group_Title" ColumnName="Blood_Group_Title" />
+          <ScalarProperty Name="Blood_Group_ID" ColumnName="Blood_Group_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blood_Stock">
+      <EntityTypeMapping TypeName="BloodBankDatabaseModel.Blood_Stock">
+        <MappingFragment StoreEntitySet="Blood_Stock">
+          <ScalarProperty Name="Stock_ID_BType" ColumnName="Stock_ID_BType" />
+          <ScalarProperty Name="Blood_Quantity" ColumnName="Blood_Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donated_Blood">
+      <EntityTypeMapping TypeName="BloodBankDatabaseModel.Donated_Blood">
+        <MappingFragment StoreEntitySet="Donated_Blood">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Donor_ID" ColumnName="Donor_ID" />
+          <ScalarProperty Name="Receiver_ID" ColumnName="Receiver_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donors">
+      <EntityTypeMapping TypeName="BloodBankDatabaseModel.Donor">
+        <MappingFragment StoreEntitySet="Donor">
+          <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+          <ScalarProperty Name="Donor_Name" ColumnName="Donor_Name" />
+          <ScalarProperty Name="Donor_Fname" ColumnName="Donor_Fname" />
+          <ScalarProperty Name="Donor_Age" ColumnName="Donor_Age" />
+          <ScalarProperty Name="Donor_Gender" ColumnName="Donor_Gender" />
+          <ScalarProperty Name="Donor_DOB" ColumnName="Donor_DOB" />
+          <ScalarProperty Name="Donor_Phone" ColumnName="Donor_Phone" />
+          <ScalarProperty Name="Donor_CNIC" ColumnName="Donor_CNIC" />
+          <ScalarProperty Name="Donor_Email" ColumnName="Donor_Email" />
+          <ScalarProperty Name="Donor_City" ColumnName="Donor_City" />
+          <ScalarProperty Name="Donor_Address" ColumnName="Donor_Address" />
+          <ScalarProperty Name="Donor_Height" ColumnName="Donor_Height" />
+          <ScalarProperty Name="donatedBefore" ColumnName="donatedBefore" />
+          <ScalarProperty Name="donatedBefore_Date" ColumnName="donatedBefore_Date" />
+          <ScalarProperty Name="Donor_Disease" ColumnName="Donor_Disease" />
+          <ScalarProperty Name="Eye_Color_ID" ColumnName="Eye_Color_ID" />
+          <ScalarProperty Name="Blood_Type_ID" ColumnName="Blood_Type_ID" />
+          <ScalarProperty Name="Stock_ID" ColumnName="Stock_ID" />
+          <ScalarProperty Name="isSelfDonated" ColumnName="isSelfDonated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Eye_Color">
+      <EntityTypeMapping TypeName="BloodBankDatabaseModel.Eye_Color">
+        <MappingFragment StoreEntitySet="Eye_Color">
+          <ScalarProperty Name="Eye_Color_ID" ColumnName="Eye_Color_ID" />
+          <ScalarProperty Name="Eye_Color1" ColumnName="Eye_Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="BloodBankDatabaseModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="MemberEmail" ColumnName="MemberEmail" />
+          <ScalarProperty Name="MemberPhone" ColumnName="MemberPhone" />
+          <ScalarProperty Name="MemberPassword" ColumnName="MemberPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receivers">
+      <EntityTypeMapping TypeName="BloodBankDatabaseModel.Receiver">
+        <MappingFragment StoreEntitySet="Receiver">
+          <ScalarProperty Name="Receiver_ID" ColumnName="Receiver_ID" />
+          <ScalarProperty Name="Receiver_Name" ColumnName="Receiver_Name" />
+          <ScalarProperty Name="Receiver_Fname" ColumnName="Receiver_Fname" />
+          <ScalarProperty Name="Receiver_Phone" ColumnName="Receiver_Phone" />
+          <ScalarProperty Name="Receiver_CNIC" ColumnName="Receiver_CNIC" />
+          <ScalarProperty Name="Blood_Amount" ColumnName="Blood_Amount" />
+          <ScalarProperty Name="Donation_Date" ColumnName="Donation_Date" />
+          <ScalarProperty Name="Disease" ColumnName="Disease" />
+          <ScalarProperty Name="Donor_ID" ColumnName="Donor_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

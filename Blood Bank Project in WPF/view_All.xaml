@@ -1,0 +1,35 @@
+﻿<Page xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"  x:Class="Blood_Bank_Project_in_WPF.view_All"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Blood_Bank_Project_in_WPF"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="View All" Grid.Column="0" FontFamily="Segoe UI" FontSize="25px" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <Frame x:Name="Grid_Frame" Grid.Row="0" Grid.Column="0" Margin="10,10,10,10" Padding="5,5,5,5"/>
+            
+            <Button x:Name="btn_viewDonors" Content="Donor's List" Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" Height="25px" HorizontalAlignment="Left" Margin="10,0,0,5" Style="{DynamicResource Flat_Button}" Click="btn_viewDonors_Click" />
+            <Button x:Name="btn_viewAccepters" Content="Accepter's List" Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" Height="25px" HorizontalAlignment="Right" Margin="0,0,10,5" Style="{DynamicResource Flat_Button}" Click="btn_viewAccepters_Click" />
+
+        </Grid>
+    </Grid>
+</Page>

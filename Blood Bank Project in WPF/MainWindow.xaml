@@ -1,0 +1,45 @@
+﻿<Window x:Class="Blood_Bank_Project_in_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Blood_Bank_Project_in_WPF"
+        mc:Ignorable="d"
+        Title="BloodLine" Height="650" Width="1200" MinHeight="500" MinWidth="650" SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Icon="Media/System_Icon.ico" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="18*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontFamily="Segoe UI" TextWrapping="Wrap" FontSize="25px" FontStretch="Normal" Background="CornflowerBlue" Foreground="White" Text="BloodLine" TextAlignment="Center"/>
+        <Frame Grid.Column="1" Grid.Row="0" Background="CornflowerBlue" Height="20" VerticalAlignment="Top"/>
+        <Grid Grid.Column="0" Grid.Row="1" Background="CornflowerBlue" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btn_home" BorderBrush="CornflowerBlue" Cursor="Hand"  Grid.Row="1" Content="Home" FontFamily="Segoe UI" FontSize="20px" Foreground="White"  Click="btn_home_Click" Background="{x:Null}" />
+            <Button x:Name="btn_addDonor" BorderBrush="CornflowerBlue" Cursor="Hand" Grid.Row="2" Content="Add Donor" Background="CornflowerBlue" FontFamily="Segoe UI" FontSize="20px" Foreground="White" Click="btn_addDonor_Click"></Button>
+            <Button x:Name="btn_donateBlood" BorderBrush="CornflowerBlue" Cursor="Hand" Grid.Row="3" Content="Donate Blood" Background="CornflowerBlue" FontFamily="Segoe UI" FontSize="20px" Foreground="White" Click="btn_donateBlood_Click"></Button>
+            <Button x:Name="btn_searchPerson" BorderBrush="CornflowerBlue" Grid.Row="4" Cursor="Hand" Content="Search Person" Background="CornflowerBlue" FontFamily="Segoe UI" FontSize="20px" Foreground="White" Click="btn_searchPerson_Click"></Button>
+            <Button x:Name="btn_viewAll" BorderBrush="CornflowerBlue" Grid.Row="5" Content="View All" Cursor="Hand" Background="CornflowerBlue" FontFamily="Segoe UI" FontSize="20px" Foreground="White" Click="btn_viewAll_Click"/>
+            <Button x:Name="btn_logout" BorderBrush="CornflowerBlue" Grid.Row="6" Content="Logout" Cursor="Hand" Background="CornflowerBlue" FontFamily="Segoe UI" FontSize="20px" Foreground="White" Click="btn_logout_Click"></Button>
+            <Button x:Name="btn_about" BorderBrush="CornflowerBlue" Grid.Row="7" Content="About" Cursor="Hand" Background="CornflowerBlue"  FontFamily="Segoe UI" FontSize="20px" Foreground="White" Click="btn_about_Click"></Button>
+            <TextBlock Text="Active User:-" Grid.Row="8" Margin="0,25,0,0" TextAlignment="Justify" FontFamily="Segoe UI" FontSize="15px" Foreground="White"></TextBlock>
+            <TextBlock x:Name="txt_activeUser" Grid.Row="9" TextAlignment="Center" Text="Farhad Akram" FontFamily="Segoe UI" FontSize="20px" Foreground="White"></TextBlock>
+        </Grid>
+        <Frame x:Name="main_Frame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>
